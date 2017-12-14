@@ -1,0 +1,2 @@
+include ':app', ':project1', ':leancloudchatkit', ':avoscloud-sdk', ':avoscloud-push'
+rootProject.name = 'artifact'

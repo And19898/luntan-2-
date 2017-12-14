@@ -1,0 +1,53 @@
+apply from: '../config/lib_module.gradle'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile dep.appcompat
+    compile dep.design
+    compile dep.glide
+    //okgo http请求框架
+    compile(dep.okgo)
+    //bmob云
+    //    compile(dep.bmob) {
+    //        exclude group: 'com.squareup.okio'
+    //        exclude module: 'okio'
+    //    }
+    //lean云
+    //    compile(dep.leanCloud) {
+    //        exclude group: 'com.squareup.okio'
+    //        exclude module: 'okio'
+    //    }
+    //沉浸式状态栏
+    compile dep.barlibrary
+    //轮播图
+    compile dep.bgabanner
+    //极光
+    compile dep.jpush
+    compile dep.jcore
+    //水平数字进度条
+    compile dep.numberprogressbar
+    //x5内核
+    compile files('libs/tbs_sdk_thirdapp_v3.3.0.1045_43300_sharewithdownload_withoutGame_obfs_20170605_170212.jar')
+    //listview的adapter
+    compile dep.ListViewBaseAdapter
+    compile dep.rxjava2
+    compile dep.rxandroid2
+    compile dep.viewcore
+    //圆形imageview
+    compile dep.circleimageview
+    //loading动画
+    compile dep.AndroidSpinKit
+    //leancloud实时通信
+    //    compile(dep.avoscloudPush) { transitive = true }
+    compile project(':leancloudchatkit')
+    //下拉刷新
+    compile dep.SmartRefreshLayout
+    compile dep.SmartRefreshHeader
+    compile files('libs/BmobSDK_3.5.8_20171013.jar')
+    compile dep.gson
+    compile files('libs/rxandroid-1.2.0.jar')
+    compile files('libs/rxjava-1.1.6.jar')
+
+    compile dep.imagepicker
+    compile dep.eventbus
+}
