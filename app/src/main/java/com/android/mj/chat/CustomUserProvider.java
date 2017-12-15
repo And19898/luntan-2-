@@ -3,6 +3,7 @@ package com.android.mj.chat;
 import com.android.mj.model.UserModel;
 import com.android.mj.tools.LogUtil;
 import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
@@ -48,7 +49,8 @@ public class CustomUserProvider implements LCChatProfileProvider {
                     }
                     if (list != null && list.size() != 0) {
                         for (UserModel model : list) {
-                            LCChatKitUser user = new LCChatKitUser(model.getObjectId(), model.getNickName(), model.getUserPhoto().getUrl());
+                            AVFile file = model.getUserPhoto();
+                            LCChatKitUser user = new LCChatKitUser(model.getObjectId(), model.getNickName(), file == null ? "" : file.getUrl());
                             userList.add(user);
                         }
                         callBack.done(userList, null);
