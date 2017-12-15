@@ -67,6 +67,9 @@ public class SplashActivity extends SplashBaseActivity {
                         }
                     }
                 }
+                if(e != null){
+                    LogUtil.e("e:::::::::::"+e.getMessage());
+                }
                 toMain();
             }
         });

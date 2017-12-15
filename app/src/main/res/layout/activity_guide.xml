@@ -5,6 +5,7 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#cdcdcd"
         android:orientation="vertical">
 
         <cn.bingoogolapple.bgabanner.BGAGuideLinkageLayout
@@ -32,7 +33,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="60dp"
-            android:background="@drawable/bga_banner_selector_point_hollow"
+            android:background="@drawable/selector_enter_guide"
             android:padding="8dp"
             android:text="进入主界面"
             android:textColor="@android:color/white"
