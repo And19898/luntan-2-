@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
 
 import com.android.mj.model.Post;
 import com.android.tuan.R;
@@ -51,30 +53,37 @@ public class PostTypeActivity extends RefreshBaseActivity<ActivityRefreshListvie
     private void setImageAndText() {
         switch (type) {
             case 1:
+                tvTitle.setText("新手报道");
                 headerTypePostBinding.tvHeader.setText("新手报道");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_xinshou, 0, 0);
                 break;
             case 2:
+                tvTitle.setText("签到区");
                 headerTypePostBinding.tvHeader.setText("签到区");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_qiandao, 0, 0);
                 break;
             case 3:
+                tvTitle.setText("彩票专区");
                 headerTypePostBinding.tvHeader.setText("彩票专区");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_caipiao, 0, 0);
                 break;
             case 4:
+                tvTitle.setText("灌水区");
                 headerTypePostBinding.tvHeader.setText("灌水区");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_guanshui, 0, 0);
                 break;
             case 5:
+                tvTitle.setText("精华区");
                 headerTypePostBinding.tvHeader.setText("精华区");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_jinghua, 0, 0);
                 break;
             case 6:
+                tvTitle.setText("经验交流");
                 headerTypePostBinding.tvHeader.setText("经验交流");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_jiaoliu, 0, 0);
                 break;
             case 7:
+                tvTitle.setText("技术分享");
                 headerTypePostBinding.tvHeader.setText("技术分享");
                 headerTypePostBinding.tvHeader.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_fenxiang, 0, 0);
                 break;
@@ -89,11 +98,18 @@ public class PostTypeActivity extends RefreshBaseActivity<ActivityRefreshListvie
     @Override
     protected AVQuery getAvQuery(AVQuery avQuery) {
         avQuery.whereEqualTo("type", type);
+        avQuery.include("user");
         return avQuery;
     }
 
     @Override
     protected QuickAdapter<Post> getAdapter() {
         return new HomeAdapter(context);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        super.onItemClick(adapterView, view, i, l);
+        PostDetailActivity.seePost(context, adapter.getItem(i - 1));
     }
 }

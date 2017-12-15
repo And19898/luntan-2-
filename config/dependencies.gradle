@@ -26,6 +26,8 @@ ext {
     mockito = "2.10.0"
     truth = "0.36"
 
+    circleDialog = "2.1.6"
+
     constraint = "1.1.0-beta3"
     lifecycle = "1.0.0"
 
@@ -102,7 +104,10 @@ ext {
     imagepicker = "0.6.1"
     eventbus = "1.0.5.1"
 
+    banner = "1.4.10"
     dep = [
+            banner                  : "com.youth.banner:banner:$banner",
+            circleDialog            : "com.mylhyl:circleDialog:$circleDialog",
             eventbus                : "org.simple:androideventbus:$eventbus",
             appcompat               : "com.android.support:appcompat-v7:$support",
             palette                 : "com.android.support:palette-v7:$support",

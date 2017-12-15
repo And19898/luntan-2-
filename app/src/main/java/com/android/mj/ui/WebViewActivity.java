@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.android.mj.R;
+import com.android.mj.databinding.ActivityWebviewBinding;
 import com.android.mj.tools.ToastUtils;
 import com.android.mj.tools.activity_manager.ActivityManager;
 import com.android.mj.webview.x5.ProgressWebView;
@@ -17,7 +18,7 @@ import com.android.mj.webview.x5.clients.IWebChromeClient;
 import com.android.mj.webview.x5.clients.IWebViewClient;
 import com.tencent.smtt.sdk.WebView;
 
-public class WebViewActivity extends UIActivity implements View.OnClickListener {
+public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implements View.OnClickListener {
     private ProgressWebView progressWebview;
 
     public static void load(Context context, String url, boolean isShowBack) {
@@ -126,10 +127,6 @@ public class WebViewActivity extends UIActivity implements View.OnClickListener 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (isShowBack) return super.onKeyDown(keyCode, event);
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (progressWebview.getWebView().canGoBack()) {
-                progressWebview.getWebView().goBack();
-                return true;
-            }
             if (backTime == 0) {
                 backTime = System.currentTimeMillis();
                 ToastUtils.toastWarn(this, getString(R.string.hybrid_exit_app));

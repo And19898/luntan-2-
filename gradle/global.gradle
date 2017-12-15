@@ -8,15 +8,15 @@ ext{
     tagVersion = 27
 
     //app名字
-    appName = "铁算盘"
+    appName = "11选5"
     //app启动页图片(必须在drawable文件夹中)
-    splashPic = "splash"
+    splashPic = "splash_1"
     //bmob key
     bmobKey = "979f2349e879fb0a4af2868de572a812"
     //app包名
-    packagename = "com.mj.luntan11"
+    packagename = "com.android.xuan"
     //推送key
-    jpush_appkey = "16861f29eb7b9932a25a7471"
+    jpush_appkey = "18d7f16f5f90df21816c592e"
     //app版本名
     autoVersionName = "2.3.6"
     //主题色

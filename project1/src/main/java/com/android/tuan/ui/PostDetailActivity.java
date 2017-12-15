@@ -33,7 +33,8 @@ public class PostDetailActivity extends UIActivity<ActivityPostDetailBinding> {
         intent.putExtra("post", post);
         context.startActivity(intent);
     }
-    public static void seePost(Context context, Post post, UserModel userModel) {
+
+    public static void seePost(Context context, Post post, AVUser userModel) {
         Intent intent = new Intent(context, PostDetailActivity.class);
         intent.putExtra("post", post);
         intent.putExtra("user", userModel);
@@ -57,16 +58,16 @@ public class PostDetailActivity extends UIActivity<ActivityPostDetailBinding> {
         post = getIntent().getParcelableExtra("post");
         databinding.tvPostTitle.setText(post.getTitle());
         databinding.tvPostContent.setText(post.getContent());
-        UserModel model = getIntent().getParcelableExtra("user");
-        if(model == null){
+        AVUser model = getIntent().getParcelableExtra("user");
+        if (model == null) {
             model = post.getUser();
         }
-        AVFile photo = model.getUserPhoto();
+        AVFile photo = model.getAVFile("photo");
         if (photo != null) {
             Glide.with(this).load(photo.getUrl()).into(databinding.ivUserHeader);
         }
-        databinding.tvUserName.setText(model.getNickName());
-        databinding.tvUserSign.setText(model.getSign());
+        databinding.tvUserName.setText(model.getString("nickName"));
+        databinding.tvUserSign.setText(model.getString("usersign"));
         AVFile img1 = post.getImage1();
         AVFile img2 = post.getImage2();
         AVFile img3 = post.getImage3();

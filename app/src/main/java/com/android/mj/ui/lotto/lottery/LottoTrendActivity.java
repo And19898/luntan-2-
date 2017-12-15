@@ -45,6 +45,7 @@ public class LottoTrendActivity extends UIActivity<ActivityLottoTrendBinding> im
 
     @Override
     protected void init() {
+        showProgress();
         tvTitle.setText("走势图");
         initViews();
         loadData();
@@ -53,6 +54,7 @@ public class LottoTrendActivity extends UIActivity<ActivityLottoTrendBinding> im
     private Handler mHandler = new Handler() {
         public void handleMessage(Message paramMessage) {
             super.handleMessage(paramMessage);
+            dismissProgress();
             LottoTrendActivity.this.mTrendChart.updateData("01", (ArrayList) paramMessage.obj);
         }
     };

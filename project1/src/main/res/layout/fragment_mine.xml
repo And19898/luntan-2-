@@ -140,6 +140,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_my_fabu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="我发布的帖子"
@@ -150,6 +151,40 @@
                         android:drawablePadding="6dp"
                         android:padding="8dp"
                         android:drawableLeft="@drawable/ic_mine_fabu"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:background="#f0f0f0"/>
+
+                    <TextView
+                        android:id="@+id/tv_feedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="我要反馈"
+                        android:textSize="16dp"
+                        android:drawableRight="@drawable/ic_message_arrow"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="7dp"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_feedback"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#f0f0f0"/>
+
+                    <TextView
+                        android:id="@+id/tv_guanyu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="关于我们"
+                        android:textSize="16dp"
+                        android:drawableRight="@drawable/ic_message_arrow"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="6dp"
+                        android:padding="8dp"
+                        android:drawableLeft="@drawable/ic_guanyu"/>
 
                     <View
                         android:layout_width="match_parent"

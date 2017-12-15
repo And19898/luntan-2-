@@ -7,7 +7,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <cn.bingoogolapple.bgabanner.BGABanner
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+<!--        <cn.bingoogolapple.bgabanner.BGABanner
             android:id="@+id/banner_guide_content"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -16,7 +22,7 @@
             app:banner_pointContainerBackground="@android:color/transparent"
             app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
             app:banner_pointTopBottomMargin="15dp"
-            app:banner_transitionEffect="alpha" />
+            app:banner_transitionEffect="alpha" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,9 +61,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="4dp"
-                android:drawableTop="@drawable/ic_home_kaijiang"
+                android:drawableTop="@drawable/ic_shouqi"
                 android:gravity="center"
-                android:text="最新"
+                android:text="测运势"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
         </LinearLayout>

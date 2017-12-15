@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.android.mj.tools.GuideTools;
+import com.android.mj.tools.LogUtil;
 import com.android.mj.tools.ResourceUtil;
 import com.android.mj.ui.SplashBaseActivity;
 import com.android.mj.ui.WebViewActivity;
 import com.android.tuan.BuildConfig;
-import com.android.tuan.checkSkip.BmobConfig;
-import com.android.tuan.checkSkip.Config;
+import com.android.tuan.checkSkip.bmob.Config;
 import com.android.tuan.tools.SplashTools;
 import com.google.gson.Gson;
 
@@ -24,6 +24,7 @@ import cn.bmob.v3.listener.FindListener;
  */
 public class SplashActivity extends SplashBaseActivity {
     private long timeStamp = 0;
+
     @Override
     protected int getSplashRes() {
         //返回启动页图片资源，在global.gradle中配置
@@ -39,7 +40,7 @@ public class SplashActivity extends SplashBaseActivity {
     @Override
     protected String getCheckType() {
         //检测类型，bmob检测还是接口检测
-        return INTERFACE_CHECK;
+        return BMOB_CHECK;
     }
 
     @Override
@@ -52,13 +53,13 @@ public class SplashActivity extends SplashBaseActivity {
     @Override
     protected void bmobCheck() {
         //实现bmob检测
-        BmobQuery<BmobConfig> query = new BmobQuery<>();
-        query.findObjects(new FindListener<BmobConfig>() {
+        BmobQuery<Config> query = new BmobQuery<>();
+        query.findObjects(new FindListener<Config>() {
             @Override
-            public void done(List<BmobConfig> list, BmobException e) {
+            public void done(List<Config> list, BmobException e) {
                 if (e == null) {
                     if (list != null && list.size() != 0) {
-                        for (BmobConfig config : list) {
+                        for (Config config : list) {
                             if (config.getAppid().equals(getPackageName())) {
                                 deal(config);
                                 return;
@@ -71,7 +72,7 @@ public class SplashActivity extends SplashBaseActivity {
         });
     }
 
-    private void deal(BmobConfig configModel) {
+    private void deal(Config configModel) {
         final String url = configModel.getUrl();
         if (configModel.isShow()) {
             if (GuideTools.needShowGuide()) {
@@ -79,8 +80,10 @@ public class SplashActivity extends SplashBaseActivity {
                     @Override
                     public void done() {
                         GuideActivity.showGuide(context, url);
+                        finish();
                     }
                 });
+                return;
             } else {
                 SplashTools.checkTime(timeStamp, new SplashTools.SplashCallback() {
                     @Override
@@ -98,7 +101,7 @@ public class SplashActivity extends SplashBaseActivity {
     @Override
     protected String interfaceCheckAndReturnUrl(String result) {
         try {
-            Config config = new Gson().fromJson(result, Config.class);
+            com.android.tuan.checkSkip.Config config = new Gson().fromJson(result, com.android.tuan.checkSkip.Config.class);
             if (config != null && config.getStatus() == 1 && config.getIsshowwap().equalsIgnoreCase("1") && !TextUtils.isEmpty(config.getWapurl())) {
                 return config.getWapurl();
             }

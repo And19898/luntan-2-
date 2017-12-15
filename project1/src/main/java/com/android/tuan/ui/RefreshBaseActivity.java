@@ -27,12 +27,10 @@ import static com.android.mj.cons.Cons.PAGE_COUNT;
  * date: 2017/12/13.
  */
 
-public abstract class RefreshBaseActivity<T extends ViewDataBinding, D extends AVObject> extends RefreshActivity<T, D> implements OnRefreshLoadmoreListener,AdapterView.OnItemClickListener {
+public abstract class RefreshBaseActivity<T extends ViewDataBinding, D extends AVObject> extends RefreshActivity<T, D> implements OnRefreshLoadmoreListener, AdapterView.OnItemClickListener {
 
 
     protected AVQuery<D> avQuery;
-
-
 
 
     protected void refreshQuery(AVQuery avQuery) {
@@ -47,15 +45,14 @@ public abstract class RefreshBaseActivity<T extends ViewDataBinding, D extends A
             if (isRefresh) {
                 adapter.clear();
             }
-            adapter.addAll(list);
+            if (list != null)
+                adapter.addAll(list);
             smartRefreshLayout.finishLoadmore();
             smartRefreshLayout.finishRefresh();
             refreshView();
             dismissProgress();
         }
     };
-
-
 
 
     @Override
@@ -69,8 +66,6 @@ public abstract class RefreshBaseActivity<T extends ViewDataBinding, D extends A
     protected abstract Class<D> getQueryClass();
 
     protected abstract AVQuery getAvQuery(AVQuery avQuery);
-
-
 
 
 }

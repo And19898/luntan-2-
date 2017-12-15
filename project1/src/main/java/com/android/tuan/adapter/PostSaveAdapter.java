@@ -27,9 +27,12 @@ public class PostSaveAdapter extends QuickAdapter<PostSave> {
     @Override
     protected void convert(BaseAdapterHelper helper, PostSave item) {
         Post post = item.getPost();
-        AVFile file = item.getUser().getUserPhoto();
-        if(file != null){
-            Glide.with(context).load(file.getUrl()).into((ImageView) helper.getView(R.id.iv_header));
+        UserModel userModel = item.getUser();
+        if(userModel != null){
+            AVFile file = userModel.getUserPhoto();
+            if(file != null){
+                Glide.with(context).load(file.getUrl()).into((ImageView) helper.getView(R.id.iv_header));
+            }
         }
         helper.setText(R.id.tv_title, post.getTitle())
                 .setText(R.id.tv_content, post.getContent())

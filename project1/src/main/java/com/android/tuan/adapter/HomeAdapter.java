@@ -25,7 +25,7 @@ public class HomeAdapter extends QuickAdapter<Post> {
     @Override
     protected void convert(BaseAdapterHelper helper, Post item) {
         AVFile file = item.getUser().getUserPhoto();
-        if(file != null){
+        if (file != null) {
             Glide.with(context).load(file.getUrl()).into((ImageView) helper.getView(R.id.iv_header));
         }
         helper.setText(R.id.tv_title, item.getTitle())
@@ -34,13 +34,13 @@ public class HomeAdapter extends QuickAdapter<Post> {
         AVFile img1 = item.getImage1();
         AVFile img2 = item.getImage2();
         AVFile img3 = item.getImage3();
-        if(img1 != null){
+        if (img1 != null) {
             Glide.with(context).load(img1.getUrl()).into((ImageView) helper.getView(R.id.iv_1));
         }
-        if(img2 != null){
+        if (img2 != null) {
             Glide.with(context).load(img2.getUrl()).into((ImageView) helper.getView(R.id.iv_2));
         }
-        if(img3 != null){
+        if (img3 != null) {
             Glide.with(context).load(img3.getUrl()).into((ImageView) helper.getView(R.id.iv_3));
         }
     }

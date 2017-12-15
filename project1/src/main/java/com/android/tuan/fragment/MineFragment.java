@@ -12,7 +12,10 @@ import com.android.tuan.R;
 import com.android.tuan.databinding.FragmentMineBinding;
 import com.android.tuan.ui.EditUserMessageActivity;
 import com.android.tuan.ui.FanActivity;
+import com.android.tuan.ui.FeedbackActivity;
+import com.android.tuan.ui.GuanyuActivity;
 import com.android.tuan.ui.MyAttentionActivity;
+import com.android.tuan.ui.MyFabuActivity;
 import com.android.tuan.ui.MySaveActivity;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;
@@ -48,6 +51,9 @@ public class MineFragment extends UIBaseFragment<FragmentMineBinding> implements
         databinding.tvMySave.setOnClickListener(this);
         databinding.ivArrow.setOnClickListener(this);
         databinding.imgHeader.setOnClickListener(this);
+        databinding.tvMyFabu.setOnClickListener(this);
+        databinding.tvGuanyu.setOnClickListener(this);
+        databinding.tvFeedback.setOnClickListener(this);
     }
 
     @Override
@@ -58,7 +64,7 @@ public class MineFragment extends UIBaseFragment<FragmentMineBinding> implements
 
     private void refreshUser() {
         userModel = AVUser.getCurrentUser(UserModel.class);
-        if(userModel == null)return;
+        if (userModel == null) return;
         databinding.tvUsername.setText(userModel.getNickName());
         String sign = userModel.getSign();
         if (!TextUtils.isEmpty(sign)) {
@@ -91,6 +97,15 @@ public class MineFragment extends UIBaseFragment<FragmentMineBinding> implements
             case R.id.iv_arrow:
             case R.id.img_header:
                 startActivity(new Intent(getContext(), EditUserMessageActivity.class));
+                break;
+            case R.id.tv_my_fabu:
+                startActivity(new Intent(getContext(), MyFabuActivity.class));
+                break;
+            case R.id.tv_guanyu:
+                startActivity(new Intent(getContext(), GuanyuActivity.class));
+                break;
+            case R.id.tv_feedback:
+                startActivity(new Intent(getContext(), FeedbackActivity.class));
                 break;
         }
     }

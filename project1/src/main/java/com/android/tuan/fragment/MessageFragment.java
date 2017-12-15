@@ -11,6 +11,8 @@ import com.android.tuan.ui.ChatActivity;
 import com.android.tuan.ui.PrivateInboxActivity;
 import com.android.tuan.ui.SystemNotifyActivity;
 
+import cn.leancloud.chatkit.activity.LCIMConversationListFragment;
+
 /**
  * author: Rea.X
  * date: 2017/12/12.
@@ -35,6 +37,7 @@ public class MessageFragment extends UIBaseFragment<FragmentMessageBinding> impl
     protected void init(View view) {
         databinding.layoutSystemMessage.setOnClickListener(this);
         databinding.layoutSixin.setOnClickListener(this);
+        LCIMConversationListFragment f = (LCIMConversationListFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.chatlist);
     }
 
     @Override

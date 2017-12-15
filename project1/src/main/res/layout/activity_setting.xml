@@ -9,6 +9,8 @@
         <include layout="@layout/toolbar" />
 
         <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_check_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_message_arrow"
@@ -22,6 +24,7 @@
             android:background="#f0f0f0" />
 
         <TextView
+            android:id="@+id/tv_clear_cache"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_message_arrow"

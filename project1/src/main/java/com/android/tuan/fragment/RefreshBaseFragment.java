@@ -77,9 +77,10 @@ public abstract class RefreshBaseFragment<T extends ViewDataBinding, D extends A
             if (isRefresh) {
                 adapter.clear();
             }
-            adapter.addAll(list);
             smartRefreshLayout.finishLoadmore();
             smartRefreshLayout.finishRefresh();
+            if (list != null)
+                adapter.addAll(list);
             refreshView();
         }
     };

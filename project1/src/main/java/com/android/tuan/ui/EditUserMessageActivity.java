@@ -26,6 +26,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import cn.leancloud.chatkit.LCChatKitUser;
+import cn.leancloud.chatkit.cache.LCIMProfileCache;
+
 /**
  * author: Rea.X
  * date: 2017/12/14.
@@ -117,7 +120,7 @@ public class EditUserMessageActivity extends UIActivity<ActivityEditUserMessageB
     }
 
     private void save() {
-        String nickname = databinding.edtNickname.getText().toString().trim();
+        final String nickname = databinding.edtNickname.getText().toString().trim();
         String email = databinding.edtEmail.getText().toString().trim();
         String phone = databinding.edtPhone.getText().toString().trim();
         UserModel model = AVUser.getCurrentUser(UserModel.class);
@@ -142,6 +145,9 @@ public class EditUserMessageActivity extends UIActivity<ActivityEditUserMessageB
             public void done(AVException e) {
                 dismissProgress();
                 if (e == null) {
+//                    LCChatKitUser user = new LCChatKitUser(AVUser.getCurrentUser().getObjectId(), nickname, "要变更的 avatarURL");
+//                    LCIMProfileCache.getInstance().cacheUser(user);
+
                     ToastUtils.toastSuccess(context, "修改成功");
                     finish();
                     return;

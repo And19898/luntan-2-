@@ -27,7 +27,6 @@ dependencies {
     //水平数字进度条
     compile dep.numberprogressbar
     //x5内核
-    compile files('libs/tbs_sdk_thirdapp_v3.3.0.1045_43300_sharewithdownload_withoutGame_obfs_20170605_170212.jar')
     //listview的adapter
     compile dep.ListViewBaseAdapter
     compile dep.rxjava2
@@ -43,11 +42,10 @@ dependencies {
     //下拉刷新
     compile dep.SmartRefreshLayout
     compile dep.SmartRefreshHeader
-    compile files('libs/BmobSDK_3.5.8_20171013.jar')
     compile dep.gson
-    compile files('libs/rxandroid-1.2.0.jar')
-    compile files('libs/rxjava-1.1.6.jar')
 
     compile dep.imagepicker
     compile dep.eventbus
+    compile dep.circleDialog
+    compile dep.banner
 }
