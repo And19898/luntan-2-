@@ -36,6 +36,12 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
+
+        <activity
+            android:name=".ui.lotto.lottery.LottoTrendBlueActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".ui.trend.ui.TrendActivity"
             android:launchMode="singleTask"

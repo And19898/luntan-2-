@@ -56,8 +56,11 @@ public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implemen
         String title = getIntent().getStringExtra("title");
         isShowBack = getIntent().getBooleanExtra("isShowBack", false);
         if (isShowBack) {
+            toolbar.setVisibility(View.VISIBLE);
             tvBack.setVisibility(View.VISIBLE);
             tvTitle.setText(title);
+        }else{
+            toolbar.setVisibility(View.GONE);
         }
         progressWebview.getWebView().loadUrl(url);
         progressWebview.setIWebChromClient(new IWebChromeClient(progressWebview) {

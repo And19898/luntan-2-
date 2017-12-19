@@ -5,7 +5,7 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/logo_saiche"
+        android:icon="@mipmap/logo_liuhe"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -23,6 +23,22 @@
             android:name=".ui.GuideActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.WXMeiwenActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.XiaohuaDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.XiaohuaActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTop"

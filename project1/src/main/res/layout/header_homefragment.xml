@@ -7,28 +7,27 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.youth.banner.Banner
-            xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="200dp" />
 
-<!--        <cn.bingoogolapple.bgabanner.BGABanner
-            android:id="@+id/banner_guide_content"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:banner_pageChangeDuration="1000"
-            app:banner_pointAutoPlayAble="true"
-            app:banner_pointContainerBackground="@android:color/transparent"
-            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
-            app:banner_pointTopBottomMargin="15dp"
-            app:banner_transitionEffect="alpha" />-->
+        <!--        <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/banner_guide_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:banner_pageChangeDuration="1000"
+                    app:banner_pointAutoPlayAble="true"
+                    app:banner_pointContainerBackground="@android:color/transparent"
+                    app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+                    app:banner_pointTopBottomMargin="15dp"
+                    app:banner_transitionEffect="alpha" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
             android:layout_margin="10dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
@@ -63,7 +62,19 @@
                 android:drawablePadding="4dp"
                 android:drawableTop="@drawable/ic_shouqi"
                 android:gravity="center"
-                android:text="测运势"
+                android:text="微信鸡汤"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_four"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="4dp"
+                android:drawableTop="@drawable/ic_h_xiaohua"
+                android:gravity="center"
+                android:text="每日一笑"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
         </LinearLayout>

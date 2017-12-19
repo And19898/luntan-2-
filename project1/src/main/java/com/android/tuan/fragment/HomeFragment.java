@@ -14,6 +14,7 @@ import com.android.mj.tools.GlideImageLoaderBanner;
 import com.android.mj.ui.LuckPanelActivity;
 import com.android.mj.ui.UIBaseFragment;
 import com.android.mj.ui.lotto.lottery.LottoTrendActivity;
+import com.android.mj.ui.lotto.lottery.LottoTrendBlueActivity;
 import com.android.mj.ui.trend.ui.TrendActivity;
 import com.android.tuan.R;
 import com.android.tuan.adapter.HomeAdapter;
@@ -24,6 +25,8 @@ import com.android.tuan.databinding.HeaderHomefragmentBinding;
 import com.android.tuan.ui.MainActivity;
 import com.android.tuan.ui.PostDetailActivity;
 import com.android.tuan.ui.TrendChartActivity;
+import com.android.tuan.ui.WXMeiwenActivity;
+import com.android.tuan.ui.XiaohuaActivity;
 import com.avos.avoscloud.AVQuery;
 import com.joanzapata.android.QuickAdapter;
 import com.youth.banner.listener.OnBannerListener;
@@ -87,6 +90,7 @@ public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBin
         headerBinding.tvOne.setOnClickListener(this);
         headerBinding.tvTwo.setOnClickListener(this);
         headerBinding.tvThree.setOnClickListener(this);
+        headerBinding.tvFour.setOnClickListener(this);
     }
 
     @Override
@@ -120,7 +124,10 @@ public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBin
                 startActivity(new Intent(getContext(), LottoTrendActivity.class));
                 break;
             case R.id.tv_three:
-                startActivity(new Intent(getContext(), LuckPanelActivity.class));
+                startActivity(new Intent(getContext(), WXMeiwenActivity.class));
+                break;
+            case R.id.tv_four:
+                startActivity(new Intent(getContext(), XiaohuaActivity.class));
                 break;
         }
     }

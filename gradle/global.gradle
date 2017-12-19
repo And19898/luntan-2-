@@ -46,15 +46,15 @@ ext{
 
 
     //app名字
-    appName = "北京赛车"
+    appName = "六合彩"
     //app启动页图片(必须在drawable文件夹中)
     splashPic = "splash_pc"
     //bmob key
     bmobKey = "979f2349e879fb0a4af2868de572a812"
     //app包名
-    packagename = "com.android.mj.saiche"
+    packagename = "com.android.lhc"
     //推送key
-    jpush_appkey = "6a03d6c8d221cb0a8decc748"
+    jpush_appkey = "81beea684d44250418b9acdf"
     //app版本名
     autoVersionName = "1.2.2"
     //主题色
