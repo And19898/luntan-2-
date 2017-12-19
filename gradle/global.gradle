@@ -46,19 +46,19 @@ ext{
 
 
     //app名字
-    appName = "六合彩"
+    appName = "幸运28"
     //app启动页图片(必须在drawable文件夹中)
     splashPic = "splash_pc"
     //bmob key
     bmobKey = "979f2349e879fb0a4af2868de572a812"
     //app包名
-    packagename = "com.android.lhc"
+    packagename = "com.android.xy"
     //推送key
-    jpush_appkey = "81beea684d44250418b9acdf"
+    jpush_appkey = "958e9b6c7500060703aa084e"
     //app版本名
-    autoVersionName = "1.2.2"
+    autoVersionName = "2.1.1"
     //主题色
-    themeColor = "#04ba84"
+    themeColor = "#61dd1d"
     //接口检测的地址
     interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
 }
