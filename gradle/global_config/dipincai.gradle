@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "低频彩"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_2"
+    //bmob key
+    bmobKey = "979f2349e879fb0a4af2868de572a812"
+    //app包名
+    packagename = "com.android.dipincai"
+    //推送key
+    jpush_appkey = "4bc7fd623163934d104b9be4"
+    //app版本名
+    autoVersionName = "1.1.1"
+    //主题色
+    themeColor = "#2512da"
+    //接口检测的地址
+    interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+    //应用图标
+    applogo = "@mipmap/logo_dipincai"
+}
+

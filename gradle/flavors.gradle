@@ -1,36 +1,353 @@
-apply from: "../gradle/global.gradle"
 android {
-    productFlavors {
-        baidu_1 {
-            applicationId packagename
-            resValue "string", "app_name", appName
-            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
-            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
-            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
-            resValue "color", "colorPrimary", themeColor
-            manifestPlaceholders = [
-                    JPUSH_PKGNAME: packagename,
-                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
-                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
-            ]
-        }
-    }
+//    productFlavors {
+//        daletou {
+//
+//
+//
+//        }
+//        dipincai {
+//            //app名字
+//            appName = "低频彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_2"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.dipincai"
+//            //推送key
+//            jpush_appkey = "4bc7fd623163934d104b9be4"
+//            //app版本名
+//            autoVersionName = "1.1.1"
+//            //主题色
+//            themeColor = "#2512da"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_dipincai"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        gaopincai {
+//            //app名字
+//            appName = "高频彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_3"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.gaopincai"
+//            //推送key
+//            jpush_appkey = "eeacf56d30669f79e46e3ea1"
+//            //app版本名
+//            autoVersionName = "1.1.2"
+//            //主题色
+//            themeColor = "#2eef32"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_gaopincai"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        jisuliuhecai {
+//            //app名字
+//            appName = "极速六合彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_4"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.jisulhc"
+//            //推送key
+//            jpush_appkey = "a02884ef315c93a41242f180"
+//            //app版本名
+//            autoVersionName = "1.1.3"
+//            //主题色
+//            themeColor = "#0182c0"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_jisulhc"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        liangbucai {
+//            //app名字
+//            appName = "两步彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_5"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.liangbu"
+//            //推送key
+//            jpush_appkey = "7953f985f2d68ae9df288179"
+//            //app版本名
+//            autoVersionName = "1.1.5"
+//            //主题色
+//            themeColor = "#f3a62a"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_liangbu"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        liuhecai {
+//            //app名字
+//            appName = "六合彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_6"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.lhc"
+//            //推送key
+//            jpush_appkey = "81beea684d44250418b9acdf"
+//            //app版本名
+//            autoVersionName = "1.1.6"
+//            //主题色
+//            themeColor = "#0170a5"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_liuhecai"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        pailiewu {
+//            //app名字
+//            appName = "排列五"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_5"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.pailie"
+//            //推送key
+//            jpush_appkey = "d6d2801c1923a2ff4b7b2186"
+//            //app版本名
+//            autoVersionName = "1.2.0"
+//            //主题色
+//            themeColor = "#fb6f54"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/icon_pailie"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        qixingcai {
+//            //app名字
+//            appName = "七星彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_2"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.qixing"
+//            //推送key
+//            jpush_appkey = "0afbe33967e0880c6368d661"
+//            //app版本名
+//            autoVersionName = "1.1.9"
+//            //主题色
+//            themeColor = "#980000"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_qixing"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        shaugnseqiu {
+//            //app名字
+//            appName = "双色球"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_4"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.ssq"
+//            //推送key
+//            jpush_appkey = "a27a3986fc61f877f82e2cfa"
+//            //app版本名
+//            autoVersionName = "1.2.1"
+//            //主题色
+//            themeColor = "#d30c17"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_shuangseqiu"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        shishicai {
+//            //app名字
+//            appName = "时时彩"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_6"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.ssc"
+//            //推送key
+//            jpush_appkey = "3f9bea691990b7d90528f1f0"
+//            //app版本名
+//            autoVersionName = "1.2.9"
+//            //主题色
+//            themeColor = "#f4ac2d"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_shishicai"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//        tiyucaipiao {
+//            //app名字
+//            appName = "体育彩票"
+//            //app启动页图片(必须在drawable文件夹中)
+//            splashPic = "splash_6"
+//            //bmob key
+//            bmobKey = "979f2349e879fb0a4af2868de572a812"
+//            //app包名
+//            packagename = "com.android.tycp"
+//            //推送key
+//            jpush_appkey = "30e8f9f89912f0537c90d491"
+//            //app版本名
+//            autoVersionName = "1.3.4"
+//            //主题色
+//            themeColor = "#1a320f"
+//            //接口检测的地址
+//            interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+//            //应用图标
+//            applogo = "@mipmap/logo_tiyu"
+//
+//            versionName autoVersionName
+//            resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+//            resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+//            applicationId packagename
+//            resValue "string", "app_name", appName
+//            buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+//            buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+//            buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+//            resValue "color", "colorPrimary", themeColor
+//            manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+//                                    JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+//                                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//                                    app_icon     : applogo,]
+//        }
+//    }
 
-    //修改生成的apk名字
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                // 包名称
-                def flavorName = variant.productFlavors[0].name
-                // 版本名称
-                def versionName = defaultConfig.versionName
 
-                def fileName = "android_${flavorName}_${versionName}.apk"
-                def outDirectory = outputFile.parent
-                output.outputFile = new File(outDirectory, fileName)
-            }
-        }
-    }
+
 
 }

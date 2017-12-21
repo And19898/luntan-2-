@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
 apply from: '../gradle/global.gradle'
-apply from: '../gradle/flavors.gradle'
+//apply from: '../gradle/global_config/daletou.gradle'
+//apply from: '../gradle/global_config/dipincai.gradle'
+//apply from: '../gradle/global_config/gaopincai.gradle'
+//apply from: '../gradle/global_config/jisuliuhecai.gradle'
+//apply from: '../gradle/global_config/liangbucai.gradle'
+//apply from: '../gradle/global_config/liuhecai.gradle'
+//apply from: '../gradle/global_config/pailiewu.gradle'
+//apply from: '../gradle/global_config/qixingcai.gradle'
+//apply from: '../gradle/global_config/shaugnseqiu.gradle'
+//apply from: '../gradle/global_config/shishicai.gradle'
+apply from: '../gradle/global_config/tiyucaipiao.gradle'
 
 static def vercode() {
     return Integer.parseInt(new Date().format("yyMMddHHmm"))
@@ -11,24 +21,29 @@ android {
     compileSdkVersion sdkVersion
     buildToolsVersion toolsVersion
     defaultConfig {
+        applicationId packagename
         minSdkVersion minVersion
         targetSdkVersion tagVersion
         multiDexEnabled true
         versionCode vercode()
         versionName autoVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
-        resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
-        manifestPlaceholders = [
-                JPUSH_PKGNAME: packagename,
-                JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
-                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
-        ]
+        manifestPlaceholders = [JPUSH_PKGNAME: packagename,
+                                JPUSH_APPKEY : jpush_appkey, //JPush上注册的包名对应的appkey.
+                                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+                                app_icon     : applogo,]
         ndk {
             //选择要添加的对应cpu类型的.so库。
             abiFilters 'armeabi'
             // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
         }
+        resValue "string", "AutoUpdateprovide", packagename + ".install_provider"
+        resValue "string", "tray__authority", packagename + ".com.yulecheng.main.tray"
+        resValue "string", "app_name", appName
+        buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
+        buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
+        buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+        resValue "color", "colorPrimary", themeColor
     }
 
     useLibrary 'org.apache.http.legacy'
@@ -86,8 +101,31 @@ android {
             dirs 'libs'
         }
     }
+    dexOptions {
+        dexInProcess true
+        preDexLibraries true
+        javaMaxHeapSize "4g"//越大越好
+        incremental true
+    }
 
     lintOptions {
         abortOnError false
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                // 包名称
+//                def flavorName = variant.productFlavors[0].name
+                // 版本名称
+                def versionName = defaultConfig.versionName
+
+                def fileName = "${appName}_${versionName}.apk"
+                def outDirectory = outputFile.parent
+                output.outputFile = new File(outDirectory, fileName)
+            }
+        }
     }
 }

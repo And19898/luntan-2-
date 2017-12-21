@@ -1,0 +1,22 @@
+ext{
+
+    //app名字
+    appName = "体育彩票"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_6"
+    //bmob key
+    bmobKey = "979f2349e879fb0a4af2868de572a812"
+    //app包名
+    packagename = "com.android.tycp"
+    //推送key
+    jpush_appkey = "30e8f9f89912f0537c90d491"
+    //app版本名
+    autoVersionName = "1.3.4"
+    //主题色
+    themeColor = "#1a320f"
+    //接口检测的地址
+    interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+    //应用图标
+    applogo = "@mipmap/logo_tiyu"
+}
+

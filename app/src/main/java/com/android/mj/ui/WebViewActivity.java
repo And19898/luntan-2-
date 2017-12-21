@@ -16,6 +16,7 @@ import com.android.mj.tools.activity_manager.ActivityManager;
 import com.android.mj.webview.x5.ProgressWebView;
 import com.android.mj.webview.x5.clients.IWebChromeClient;
 import com.android.mj.webview.x5.clients.IWebViewClient;
+import com.gyf.barlibrary.ImmersionBar;
 import com.tencent.smtt.sdk.WebView;
 
 public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implements View.OnClickListener {
@@ -28,7 +29,7 @@ public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implemen
         context.startActivity(intent);
     }
 
-    public static void  openWebViewUrl(Context context, String url,String title){
+    public static void openWebViewUrl(Context context, String url, String title) {
         Intent intent = new Intent(context, WebViewActivity.class);
         intent.putExtra("url", url);
         intent.putExtra("isShowBack", true);
@@ -49,6 +50,16 @@ public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implemen
 
     @Override
     protected void init() {
+        immersionBar = ImmersionBar
+                .with(this)
+                .statusBarColor(android.R.color.black)
+                .navigationBarColor(android.R.color.black)
+                .fitsSystemWindows(true)
+                .keyboardEnable(true)
+        ;
+        immersionBar.init();
+
+
         progressWebview = (ProgressWebView) findViewById(R.id.progress_webview);
         tvBack.setVisibility(View.GONE);
         tvBack.setOnClickListener(this);
@@ -59,7 +70,7 @@ public class WebViewActivity extends UIActivity<ActivityWebviewBinding> implemen
             toolbar.setVisibility(View.VISIBLE);
             tvBack.setVisibility(View.VISIBLE);
             tvTitle.setText(title);
-        }else{
+        } else {
             toolbar.setVisibility(View.GONE);
         }
         progressWebview.getWebView().loadUrl(url);
