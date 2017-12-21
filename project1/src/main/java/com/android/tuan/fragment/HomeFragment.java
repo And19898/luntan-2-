@@ -2,7 +2,10 @@ package com.android.tuan.fragment;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +39,7 @@ import java.util.List;
 
 import cn.bingoogolapple.bgabanner.BGABanner;
 
+import static com.android.tuan.tools.Tools.changeDrawableToDefaultTheme;
 import static com.youth.banner.BannerConfig.NUM_INDICATOR_TITLE;
 
 /**
@@ -91,7 +95,14 @@ public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBin
         headerBinding.tvTwo.setOnClickListener(this);
         headerBinding.tvThree.setOnClickListener(this);
         headerBinding.tvFour.setOnClickListener(this);
+
+        //图标颜色变成设置的主题色
+        headerBinding.tvOne.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_home_kaijiang)), null, null);
+        headerBinding.tvTwo.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_home_zoushi)), null, null);
+        headerBinding.tvThree.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_shouqi)), null, null);
+        headerBinding.tvFour.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_h_xiaohua)), null, null);
     }
+
 
     @Override
     protected Class<Post> getQueryClass() {

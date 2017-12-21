@@ -26,6 +26,9 @@ import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import org.simple.eventbus.EventBus;
 import org.simple.eventbus.Subscriber;
 
+import static com.android.tuan.tools.Tools.changeDrawableToDefaultTheme;
+import static com.android.tuan.tools.Tools.getTabButtonDrawable;
+
 
 public class MainActivity extends UIActivity<ActivityMainBinding> implements RadioGroup.OnCheckedChangeListener, View.OnClickListener {
 
@@ -50,6 +53,12 @@ public class MainActivity extends UIActivity<ActivityMainBinding> implements Rad
         databinding.viewpager.setOffscreenPageLimit(adapter.getCount());
         databinding.radiogroup.setOnCheckedChangeListener(this);
         databinding.imgFabu.setOnClickListener(this);
+
+        databinding.rb1.setCompoundDrawablesWithIntrinsicBounds(null, getTabButtonDrawable(R.drawable.ic_index_n), null, null);
+        databinding.rb2.setCompoundDrawablesWithIntrinsicBounds(null, getTabButtonDrawable(R.drawable.ic_tuijian_n), null, null);
+        databinding.rb3.setCompoundDrawablesWithIntrinsicBounds(null, getTabButtonDrawable(R.drawable.ic_faxian_n), null, null);
+        databinding.rb4.setCompoundDrawablesWithIntrinsicBounds(null, getTabButtonDrawable(R.drawable.ic_mine_n), null, null);
+        databinding.imgFabu.setImageDrawable(changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_main_fabu)));
     }
 
     @Override
