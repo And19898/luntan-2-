@@ -15,7 +15,7 @@ ext{
     //主题色
     themeColor = "#1a320f"
     //接口检测的地址
-    interface_check_url = "https://appid-apkk.xx-app.com/frontApi/getAboutUs?appid=94836901"
+    interface_check_url = "http://pjhnbo.net/api/app?appkey=WKRZaxVhcrdvEfm9uJndWedHvAAx32c2&appid=141304"
     //应用图标
     applogo = "@mipmap/logo_tiyu"
 }

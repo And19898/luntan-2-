@@ -73,7 +73,7 @@ public class Library {
         AVIMClient.setAutoOpen(false);
         AVOSCloud.setDebugLogEnabled(BuildConfig.DEBUG);
         ActivityManager.startWatcher(application);
-        queryRuntimeConfig();
+//        queryRuntimeConfig();
         loginChat(null);
     }
 

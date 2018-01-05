@@ -25,6 +25,7 @@ import com.android.tuan.databinding.ActivityRefreshListviewBinding;
 import com.android.tuan.databinding.FragmentHomeBinding;
 import com.android.tuan.databinding.FragmentRefreshListviewBinding;
 import com.android.tuan.databinding.HeaderHomefragmentBinding;
+import com.android.tuan.ui.ArtActivity;
 import com.android.tuan.ui.MainActivity;
 import com.android.tuan.ui.PostDetailActivity;
 import com.android.tuan.ui.TrendChartActivity;
@@ -45,6 +46,7 @@ import static com.youth.banner.BannerConfig.NUM_INDICATOR_TITLE;
 /**
  * author: Rea.X
  * date: 2017/12/13.
+ * 论坛文章列表样式
  */
 
 public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBinding, Post> implements View.OnClickListener {
@@ -98,7 +100,7 @@ public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBin
 
         //图标颜色变成设置的主题色
         headerBinding.tvOne.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_home_kaijiang)), null, null);
-        headerBinding.tvTwo.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_home_zoushi)), null, null);
+        headerBinding.tvTwo.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_home_art)), null, null);
         headerBinding.tvThree.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_shouqi)), null, null);
         headerBinding.tvFour.setCompoundDrawablesWithIntrinsicBounds(null, changeDrawableToDefaultTheme(getResources().getDrawable(R.drawable.ic_h_xiaohua)), null, null);
     }
@@ -132,7 +134,8 @@ public class HomeFragment extends RefreshBaseFragment<FragmentRefreshListviewBin
                 startActivity(new Intent(getContext(), TrendChartActivity.class));
                 break;
             case R.id.tv_two:
-                startActivity(new Intent(getContext(), LottoTrendActivity.class));
+                startActivity(new Intent(getContext(), ArtActivity.class));
+//                startActivity(new Intent(getContext(), LottoTrendActivity.class));
                 break;
             case R.id.tv_three:
                 startActivity(new Intent(getContext(), WXMeiwenActivity.class));

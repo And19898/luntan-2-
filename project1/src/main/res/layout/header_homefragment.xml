@@ -36,9 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:drawablePadding="4dp"
-                android:drawableTop="@drawable/ic_home_kaijiang"
+                android:drawableTop="@drawable/ic_home_art"
                 android:gravity="center"
-                android:text="近期开奖"
+                android:text="历史开奖"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
 
@@ -50,7 +50,7 @@
                 android:drawablePadding="4dp"
                 android:drawableTop="@drawable/ic_home_zoushi"
                 android:gravity="center"
-                android:text="走势图"
+                android:text="艺术鉴赏"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp" />
 

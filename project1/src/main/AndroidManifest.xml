@@ -30,6 +30,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".ui.ArtActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".ui.XiaohuaDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
@@ -74,6 +79,31 @@
 
         <activity
             android:name=".ui.SearchActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.ManhuaListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.ManhuaDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.GuigushiActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.FuliActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.GuigushiDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 

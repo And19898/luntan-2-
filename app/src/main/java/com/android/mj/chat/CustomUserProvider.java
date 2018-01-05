@@ -1,11 +1,9 @@
 package com.android.mj.chat;
 
 import com.android.mj.model.UserModel;
-import com.android.mj.tools.LogUtil;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVQuery;
-import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.FindCallback;
 
 import java.util.ArrayList;

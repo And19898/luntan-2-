@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "北京幸运28"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_360"
+    //bmob key
+    bmobKey = ""
+    //app包名
+    packagename = "com.action.xybj.android"
+    //推送key
+    jpush_appkey = "613afe1015afab4f0a5b278e"
+    //app版本名
+    autoVersionName = "1.2.2"
+    //主题色
+    themeColor = "#56a4dc"
+    //接口检测的地址
+    interface_check_url = "http://vipapp.01appaaa.com/Lottery_server/get_init_data.php?type=android&appid=201801021628"
+    //应用图标
+    applogo = "@mipmap/logo_28_2"
+}
+

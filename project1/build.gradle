@@ -4,4 +4,6 @@ apply from: '../gradle/common_gradle.gradle'
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(":app")
+    compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+    compile 'com.github.chrisbanes:PhotoView:2.1.3'
 }

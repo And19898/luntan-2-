@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "六合铁算盘"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_tiesuanpan"
+    //bmob key
+    bmobKey = ""
+    //app包名
+    packagename = "com.android.suanpan"
+    //推送key
+    jpush_appkey = "20d4e033c99bdfe8e6be8f00"
+    //app版本名
+    autoVersionName = "1.2.4"
+    //主题色
+    themeColor = "#ee4041"
+    //接口检测的地址
+    interface_check_url = "http://pjhnbo.net/api/app?appkey=WKRZaxVhcrdvEfm9uJndWedHvAAx32c2&appid=141310"
+    //应用图标
+    applogo = "@mipmap/ic_tiesuanpan"
+}
+

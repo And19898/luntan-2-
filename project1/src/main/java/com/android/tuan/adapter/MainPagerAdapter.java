@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 
 import com.android.tuan.fragment.HomeFragment;
+import com.android.tuan.fragment.HomeFragment1;
 import com.android.tuan.fragment.MessageFragment;
 import com.android.tuan.fragment.MineFragment;
 import com.android.tuan.fragment.TypeFragment;
@@ -22,7 +23,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return HomeFragment.getInstant();
+                return HomeFragment1.getInstant();
             case 1:
                 return TypeFragment.getInstant();
             case 2:

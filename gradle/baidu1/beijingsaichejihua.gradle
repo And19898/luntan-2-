@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "北京赛车计划"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_360"
+    //bmob key
+    bmobKey = ""
+    //app包名
+    packagename = "com.that.bjscjh.android"
+    //推送key
+    jpush_appkey = "b9b905c3647fe6a7e45329ab"
+    //app版本名
+    autoVersionName = "1.1.9"
+    //主题色
+    themeColor = "#ffce67"
+    //接口检测的地址
+    interface_check_url = "http://vipapp.01appaaa.com/Lottery_server/get_init_data.php?type=android&appid=201801021625"
+    //应用图标
+    applogo = "@mipmap/logo_pk10"
+}
+

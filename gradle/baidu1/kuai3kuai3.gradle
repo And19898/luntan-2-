@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "快三快3"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash_360"
+    //bmob key
+    bmobKey = ""
+    //app包名
+    packagename = "com.platform.kuaisan.android"
+    //推送key
+    jpush_appkey = "33d53b36213f2a1c74562761"
+    //app版本名
+    autoVersionName = "1.2.3"
+    //主题色
+    themeColor = "#f13d8a"
+    //接口检测的地址
+    interface_check_url = "http://vipapp.01appaaa.com/Lottery_server/get_init_data.php?type=android&appid=201801021629"
+    //应用图标
+    applogo = "@mipmap/logo_kuai3"
+}
+

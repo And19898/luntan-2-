@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_one"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_home_art"
+                    android:text="历史开奖" />
+
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc" />
+                <TextView
+                    android:id="@+id/tv_five"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_shouqi"
+                    android:text="走势图" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_three"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_shouqi"
+                    android:text="微信鸡汤" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:id="@+id/tv_four"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_h_xiaohua"
+                    android:text="每日一笑" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_two"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_home_zoushi"
+                    android:text="艺术鉴赏" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:id="@+id/tv_six"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_h_xiaohua"
+                    android:text="测运气" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_seven"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_shouqi"
+                    android:text="漫画" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:id="@+id/tv_eight"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_h_xiaohua"
+                    android:text="鬼故事" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_nine"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_shouqi"
+                    android:text="福利" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:background="#cccccc" />
+
+                <TextView
+                    android:id="@+id/tv_ten"
+                    style="@style/fragment_home_1"
+                    android:drawableTop="@drawable/ic_h_xiaohua"
+                    android:text="鬼故事"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#cccccc" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

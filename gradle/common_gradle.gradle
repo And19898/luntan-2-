@@ -10,8 +10,23 @@ apply from: '../gradle/global.gradle'
 //apply from: '../gradle/global_config/qixingcai.gradle'
 //apply from: '../gradle/global_config/shaugnseqiu.gradle'
 //apply from: '../gradle/global_config/shishicai.gradle'
-apply from: '../gradle/global_config/tiyucaipiao.gradle'
-
+//apply from: '../gradle/global_config/tiyucaipiao.gradle'
+//apply from: '../gradle/global_config/wufucai.gradle'
+//apply from: '../gradle/global_config/tiesuanpan.gradle'
+//apply from: '../gradle/360/shishicaijihua.gradle'
+apply from: '../gradle/360/beijingsaiche.gradle'
+//apply from: '../gradle/360/chongqingshishicaijihua.gradle'
+//apply from: '../gradle/baidu1/shishicai.gradle'
+//apply from: '../gradle/baidu1/chongqingshishicai1.gradle'
+//apply from: '../gradle/baidu1/xinjiangshishicai.gradle'
+//apply from: '../gradle/baidu1/beijingsaiche.gradle'
+//apply from: '../gradle/baidu1/beijingsaichepk10.gradle'
+//apply from: '../gradle/baidu1/beijingpk10.gradle'
+//apply from: '../gradle/baidu1/beijingsaichejihua.gradle'
+//apply from: '../gradle/baidu1/xingyun28.gradle'
+//apply from: '../gradle/baidu1/xingyun28jihua.gradle'
+//apply from: '../gradle/baidu1/beijingxingyun28.gradle'
+//apply from: '../gradle/baidu1/kuai3kuai3.gradle'
 static def vercode() {
     return Integer.parseInt(new Date().format("yyMMddHHmm"))
 }
@@ -43,6 +58,8 @@ android {
         buildConfigField "String", "SPLASH_PIC", "\"${splashPic}\""
         buildConfigField "String", "BMOB_KEY", "\"${bmobKey}\""
         buildConfigField "String", "INTERFACE_URL", "\"${interface_check_url}\""
+        buildConfigField "String", "show_splash_time", "\"${show_splash_time}\""
+
         resValue "color", "colorPrimary", themeColor
     }
 

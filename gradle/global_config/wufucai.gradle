@@ -1,0 +1,21 @@
+ext{
+    //app名字
+    appName = "快3"
+    //app启动页图片(必须在drawable文件夹中)
+    splashPic = "splash"
+    //bmob key
+    bmobKey = ""
+    //app包名
+    packagename = "com.android.wfc"
+    //推送key
+    jpush_appkey = "4093704ea226276111a5f59c"
+    //app版本名
+    autoVersionName = "1.1.7"
+    //主题色
+    themeColor = "#2512da"
+    //接口检测的地址
+    interface_check_url = "http://185.216.248.94:8080/biz/getAppConfig?appid=22002526"
+    //应用图标
+    applogo = "@mipmap/logo_wfc"
+}
+
